@@ -1,6 +1,6 @@
 const database = 'SistemaInfoDb';
 
-db = connect("localhost:27017/test");
+db = connect("localhost:27017");
 
 use(database);
 
