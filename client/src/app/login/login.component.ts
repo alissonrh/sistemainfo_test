@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     const { username, password } = this.form;
-
     this.isLoggedIn = true;
     this.login.emit(this.isLoggedIn);
     sessionStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));

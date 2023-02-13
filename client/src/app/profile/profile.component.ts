@@ -39,7 +39,8 @@ export class ProfileComponent implements OnInit {
   onSubmit(): void {
     this.userService.create(this.form).subscribe((response: any) => {
       console.log('Success', response)
-      alert(`${this.form.nome} cadastrada com sucesso, código: ${this.form.codigo}. Quatro primeiros números do CPF: ${this.form.cpf.slice(0, 4)}`)
+      alert(`${this.form.nome} cadastrado com sucesso, código: ${this.form.codigo}. Quatro primeiros números do CPF: ${this.form.cpf.slice(0, 4)}`)
+      window.location.reload();
     }, (error: any) => {
       console.error("Error", error);
     })
