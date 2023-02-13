@@ -30,6 +30,15 @@ public class UsuariosController : ControllerBase
         return usuario;
     }
 
+/*         public async Task<IActionResult> Post(Usuario newUsuario)
+{
+    await _UsuariosService.CreateAsync(newUsuario);
+
+    string message = String.Format("{0} cadastrado com sucesso, código: {1}. Quatro primeiros números do CPF: {2}",
+                               newUsuario.Nome, newUsuario.Codigo, newUsuario.CPF.Substring(0, 4));
+    return CreatedAtAction(nameof(Get), new { id = newUsuario.Id }, message);
+} */
+
     [HttpPost]
     public async Task<IActionResult> Post(Usuario newUsuario)
     {

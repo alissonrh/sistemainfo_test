@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;" *ngIf="user">
+  <div class="card-body">
+    <h5 class="card-title">{{user.nome}}</h5>
+    <p class="card-text">Código: {{user.codigo}}</p>
+    <p class="card-text">Endereço: {{user.endereco}}</p>
+    <p class="card-text">Telefone: {{user.telefone}}</p>
+    <button class="btn btn-danger delete" (click)="delete()">Excluir</button>
+  </div>
+</div>
+<br>
+<button class="btn btn-primary" routerLink="/profile">Voltar</button>

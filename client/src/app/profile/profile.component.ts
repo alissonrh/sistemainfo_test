@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Users } from '../Models/Users';
-import { UsersService } from '../services/usuario.service';
+import { UsersService } from '../_services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -16,8 +17,15 @@ export class ProfileComponent implements OnInit {
     telefone: null
   };
   errorMessage = '';
+  users: Users[] = []
 
-  constructor(private userServide: UsersService) { }
+  constructor(private userService: UsersService, private router: Router) {
+    this.userService.list().subscribe(
+      users => {
+        this.users = users
+      }
+    )
+  }
 
   @Input() login: EventEmitter<boolean> = new EventEmitter<boolean>();
   isLoggedIn = false
@@ -29,11 +37,17 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.userServide.create(this.form).subscribe((response: any) => {
+    this.userService.create(this.form).subscribe((response: any) => {
       console.log('Success', response)
-      alert(`${this.form.nome} Cadastrada com Sucesso`)
+      alert(`${this.form.nome} cadastrada com sucesso, código: ${this.form.codigo}. Quatro primeiros números do CPF: ${this.form.cpf.slice(0, 4)}`)
     }, (error: any) => {
       console.error("Error", error);
     })
+  }
+
+  goToDetails(id: string) {
+    this.router.navigate([`/details/${id}`]).catch(() => {
+      this.router.navigate(['/details']);
+    });
   }
 }

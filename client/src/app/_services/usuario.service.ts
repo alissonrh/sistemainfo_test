@@ -15,19 +15,19 @@ export class UsersService {
     return this.http.post(this.baseUrl, users)
   }
 
-  read(id: number): Observable<Users> {
-    return this.http.get<Users>(`${this.baseUrl}/${id}`)
+  read(id: number | string | null): Observable<Users> {    
+    return this.http.get<Users>(`${this.baseUrl}${id}`)
   }
 
   list(): Observable<Users[]> {
     return this.http.get<Users[]>(this.baseUrl)
   }
 
-  update(id: number, users: Users) {
-    return this.http.put(`${this.baseUrl}/${id}`, users)
+  update(id: number | string | null, users: Users) {
+    return this.http.put(`${this.baseUrl}${id}`, users)
   }
 
-  delete(id: number) {
-    return this.http.delete(`${this.baseUrl}/${id}`)
+  delete(id: number | string | null) {
+    return this.http.delete(`${this.baseUrl}${id}`)
   }
 }

@@ -8,15 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StoreModule } from '@ngrx/store';
-import { UsersComponent } from './users/users.component';
-import { UsersService } from './services/usuario.service';
+import { UsersService } from './_services/usuario.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    UsersComponent
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
