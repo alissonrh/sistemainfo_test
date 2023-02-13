@@ -1,0 +1,87 @@
+<div class="col-md-12">
+  CADASTRAR NOVO USUÁRIO
+  <div class="card card-container">
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="codigo">Código</label>
+        <input
+          type="text"
+          class="form-control"
+          name="codigo"
+          [(ngModel)]="form.codigo"
+          #codigo="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="nome"
+          class="form-control"
+          name="nome"
+          [(ngModel)]="form.nome"
+          required
+          minlength="4"
+          #nome="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="nome.errors && f.submitted"
+        >
+          <div *ngIf="nome.errors['required']">Nome é obrigatório</div>
+          <div *ngIf="nome.errors['minlength']">
+            Nome precisa ter pelo menos 4 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input
+          type="cpf"
+          class="form-control"
+          name="cpf"
+          [(ngModel)]="form.cpf"
+          required
+          #cpf="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="cpf.errors && f.submitted"
+        >
+          <div *ngIf="cpf.errors['required']">CPF é obrigatório</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input
+          type="text"
+          class="form-control"
+          name="endereco"
+          [(ngModel)]="form.endereco"
+          #endereco="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input
+          type="text"
+          class="form-control"
+          name="telefone"
+          [(ngModel)]="form.telefone"
+          #telefone="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">
+          Cadastrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
