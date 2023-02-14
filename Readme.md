@@ -16,6 +16,11 @@ Certifique-se de ter as versões mais recentes instaladas para garantir o funcio
 
 # Instalação 
 
+1. Faça o download dos arquivos da aplicação.
+```
+https://github.com/alissonrh/sistemainfo_test.git
+```
+
 ## Configurar o MongoDB
 
 Para configurar o MongoDB, siga os passos abaixo:
@@ -44,7 +49,7 @@ db.Usuarios.insertMany([
 
 ## Instalar as dependência do Server
 
-1. Abra o terminal e acesse o diretório "server".
+1. No diretório, sistemainfo_test. Abra o terminal e acesse o diretório "server".
 
 ```
 cd server
@@ -57,10 +62,10 @@ cd server
 ```
 ## Instalar as dependencia do Client
 
-1. Abra o terminal e acesse o diretório "client".
+1. No diretório, sistemainfo_test.Abra o terminal e acesse o diretório "client".
 
 ```
-cd server
+cd client
 ```
 
 2. Execute o comando abaixo para instalar as dependências.
@@ -73,4 +78,6 @@ npm install
 ```shell
 ng serve
 ```
+
+### Acesse http://localhost:4200
 
