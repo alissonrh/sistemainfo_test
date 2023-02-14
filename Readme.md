@@ -82,5 +82,5 @@ ng serve
 ### Acesse http://localhost:4200
 
 Usuário: SISTEMA
-Senha: candidado123
+Senha: candidato123
 
