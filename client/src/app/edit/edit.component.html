@@ -1,0 +1,99 @@
+<div style="display: flex;">
+  <div style="flex: 3; width: 75%;">
+    <h3>EDITAR USUÁRIO</h3>
+    <div class="card card-container">
+      <form
+        name="form"
+        (ngSubmit)="f.form.valid && update()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="codigo">Código</label>
+          <input
+            type="text"
+            class="form-control"
+            name="codigo"
+            [(ngModel)]="form.codigo"
+            #codigo="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="nome"
+            class="form-control"
+            name="nome"
+            [(ngModel)]="form.nome"
+            required
+            minlength="4"
+            #nome="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="nome.errors && f.submitted"
+          >
+            <div *ngIf="nome.errors['required']">Nome é obrigatório</div>
+            <div *ngIf="nome.errors['minlength']">
+              Nome precisa ter pelo menos 4 caracteres
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input
+            type="cpf"
+            class="form-control"
+            name="cpf"
+            [(ngModel)]="form.cpf"
+            required
+            #cpf="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="cpf.errors && f.submitted"
+          >
+            <div *ngIf="cpf.errors['required']">CPF é obrigatório</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <input
+            type="text"
+            class="form-control"
+            name="endereco"
+            [(ngModel)]="form.endereco"
+            #endereco="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            class="form-control"
+            name="telefone"
+            [(ngModel)]="form.telefone"
+            #telefone="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-block">
+            Editar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center" style="width: 25%;">
+    <div class="card">
+      <div class="card-header">
+        <h3>Usuários Cadastrados</h3>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let user of users" style="cursor: pointer;" (click)="goToDetails(user.id)">{{user.nome}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

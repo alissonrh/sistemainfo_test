@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { AuthGuard } from './_services/auth.guard.service';
+import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: 'details/:id', component: UserDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'edit/:id', component: EditComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

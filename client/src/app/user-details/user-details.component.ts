@@ -39,7 +39,7 @@ export class UserDetailsComponent {
   }
 
   edit(id: any) {
-    this.router.navigate(['profile', id]);
+    this.router.navigate(['edit', id]);
   }
 
   delete() {

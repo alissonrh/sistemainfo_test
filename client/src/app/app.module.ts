@@ -10,13 +10,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { StoreModule } from '@ngrx/store';
 import { UsersService } from './_services/usuario.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

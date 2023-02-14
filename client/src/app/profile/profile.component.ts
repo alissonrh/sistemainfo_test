@@ -28,12 +28,18 @@ export class ProfileComponent implements OnInit {
   }
 
   @Input() login: EventEmitter<boolean> = new EventEmitter<boolean>();
-  isLoggedIn = false
+  isLoggedIn = true
 
   ngOnInit(): void {
-    this.login.subscribe((isLoggedIn) => {
+    /* this.login.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
-    });
+      
+    }); */
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn !== null) {
+      // isLoggedIn é do tipo 'string' nesta parte do código
+      this.isLoggedIn = JSON.parse(isLoggedIn);
+    }
   }
 
   onSubmit(): void {
