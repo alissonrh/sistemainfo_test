@@ -1,5 +1,5 @@
 # Cadastro de Usário
-Esta aplicação permite que os usuários gerenciem informações de pessoas, incluindo a criação, leitura e exclusão de novos usuários. O sistema foi construído utilizando as seguintes tecnologias:
+Esta aplicação permite que os usuários gerenciem informações de pessoas, incluindo a criação, leitura, edição e exclusão de novos usuários. O sistema foi construído utilizando as seguintes tecnologias:
 
 * Angular
 * C#

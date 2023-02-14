@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { StorageService } from './_services/storage.service';
 
@@ -7,7 +7,7 @@ import { StorageService } from './_services/storage.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'client';
   isLoggedIn = false;
   username?: string;
@@ -15,6 +15,7 @@ export class AppComponent {
   constructor(private StorageService: StorageService) { }
 
   ngOnInit(): void {
+    
     this.isLoggedIn = !!this.StorageService.getUser();
 
     if (this.isLoggedIn) {

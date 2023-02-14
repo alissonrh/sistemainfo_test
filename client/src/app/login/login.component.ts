@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
+  
 
   constructor(private router: Router, private StorageService: StorageService) { }
 

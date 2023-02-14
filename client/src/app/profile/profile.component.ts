@@ -37,7 +37,6 @@ export class ProfileComponent implements OnInit {
     }); */
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     if (isLoggedIn !== null) {
-      // isLoggedIn é do tipo 'string' nesta parte do código
       this.isLoggedIn = JSON.parse(isLoggedIn);
     }
   }
@@ -51,6 +50,7 @@ export class ProfileComponent implements OnInit {
       console.error("Error", error);
     })
   }
+
 
   goToDetails(id: string) {
     this.router.navigate([`/details/${id}`]).catch(() => {
