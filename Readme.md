@@ -1,5 +1,5 @@
-# Sistema de Informações
-Este é um sistema de informações que permite aos usuários gerenciarem informações de pessoas. O sistema foi construído utilizando as seguintes tecnologias:
+# Cadastro de Usário
+Esta aplicação permite que os usuários gerenciem informações de pessoas, incluindo a criação, leitura e exclusão de novos usuários. O sistema foi construído utilizando as seguintes tecnologias:
 
 * Angular
 * C#
@@ -80,4 +80,7 @@ ng serve
 ```
 
 ### Acesse http://localhost:4200
+
+Usuário: SISTEMA
+Senha: candidado123
 

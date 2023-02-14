@@ -3,6 +3,7 @@ import { StorageService } from '../_services/storage.service';
 import { Router } from '@angular/router';
 import { EventEmitter, Output } from '@angular/core';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -32,10 +33,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     const { username, password } = this.form;
-    this.isLoggedIn = true;
-    this.login.emit(this.isLoggedIn);
-    sessionStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));
-    this.StorageService.saveUser({ username, password });
-    this.router.navigate(['/profile']);
+    if (username === "SISTEMA" && password === "candidado123") {
+      this.isLoggedIn = true;
+      this.login.emit(this.isLoggedIn);
+      sessionStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));
+      this.StorageService.saveUser({ username, password });
+      this.router.navigate(['/profile']);
+    } else {
+      this.isLoginFailed = true;
+      this.errorMessage = "Usuário ou senha invalidos!";
+    }
+    
   }
 }
